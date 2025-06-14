@@ -10,7 +10,7 @@
                     <img src="{{ asset('vendor/img/F-light.png') }}" width="88">
                 </span>
             </span>
-            {{-- <span class="app-brand-text demo menu-text fw-semibold ms-2">9 Pay</span> --}}
+            {{-- <span class="app-brand-text demo menu-text fw-semibold ms-2">OX Wallet</span> --}}
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -26,9 +26,7 @@
     </div>
     <div class="menu-inner-shadow"></div>
     <ul class="menu-inner py-1 mt-3 gap-2">
-        <!-- Dashboards -->
-        @if (Session::has('adminid'))
-            
+        <!-- Dashboards -->            
         <li class="menu-item">
             <a href="{{ url(route('admin_dashboard')) }}" class="menu-link">
                 <i class="menu-icon tf-icons ri-home-smile-line"></i>
@@ -37,9 +35,9 @@
         </li>
 
         <li class="menu-item">
-            <a href="{{ url(route('add_privacy_policy')) }}" class="menu-link">
+            <a href="{{ url(route('privacy_policy')) }}" class="menu-link">
                 <i class="menu-icon tf-icons ri-home-smile-line"></i>
-                <div data-i18n="Admin Dashboard">Add Privacy Policy</div>
+                <div data-i18n="Add Privacy Policy">Add Privacy Policy</div>
             </a>
         </li>
 
@@ -49,93 +47,7 @@
                 <div data-i18n="Logout">Logout</div>
             </a>
         </li>
-        @else 
-            <li class="menu-item">
-                <a href="{{ url(route('merchant_dashboard')) }}" class="menu-link">
-                    <i class='menu-icon tf-icons ri-home-smile-line'></i>
-                    <div data-i18n="Dashboard">Dashboard</div>
-                </a>
-            </li>
-            <!-- <li class="menu-item">
-                <a href="{{ url(route('merchant_add_credit')) }}" class="menu-link">
-                    <i class="menu-icon tf-icons ri-bank-card-line "></i>
-                    <div data-i18n="Add Credit">Add Credit</div>
-                </a>
-            </li> -->
-            <!-- <li class="menu-item">
-                <a href="{{ url(route('merchant_deposit_address')) }}" class="menu-link">
-                    <i class="menu-icon tf-icons ri-luggage-deposit-line"></i>
-                    <div data-i18n="Deposit Address">Deposit Address</div>
-                </a>
-            </li> -->
-            {{-- <li class="menu-item">
-                <a href="{{ url(route('merchant_transaction')) }}" class="menu-link">
-                    <i class='menu-icon tf-icons ri-bill-line'></i>
-                    <div data-i18n="Transactions">Transactions</div>
-                </a>
-            </li> --}}
-            {{-- <li class="menu-item">
-                <a href="{{ url(route('merchant_project_details')) }}" class="menu-link">
-                    <i class='menu-icon tf-icons ri-bill-line'></i>
-                    <div data-i18n="Project Details">Project Details</div>
-                </a>
-            </li> --}}
-            <li class="menu-item">
-                <a href="{{ url(route('merchant_project_transactions')) }}" class="menu-link">
-                    <i class="menu-icon tf-icons ri-history-fill"></i>
-                    <div data-i18n="Transactions History">Transactions History</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="{{ url(route('merchant_support_ticket')) }}" class="menu-link">
-                    <i class="menu-icon tf-icons ri-ticket-line"></i>
-                    <div data-i18n="Support Tickets">Support Tickets</div>
-                </a>
-            </li>
-            @php
-                $merchantid= Session::get('merchantid');
-                $merchant = DB::table('merchants')->where('id', $merchantid)->first();                
-            @endphp
-            @if($merchant->api_postfix=='techmont')
-            <li class="menu-item">
-                <a href="{{ url(route('merchant_withdrawl_transaction')) }}" class="menu-link">
-                    <i class="menu-icon tf-icons ri-wallet-3-line"></i> 
-                    <div data-i18n="Withdrawl Transactions">Withdrawl Transactions</div>
-                </a>
-            </li>
-            @endif
-            <!-- <li class="menu-item">
-                <a href="{{ url(route('merchant_project_history')) }}" class="menu-link">
-                    <i class="menu-icon tf-icons ri-file-history-line"></i>
-                    <div data-i18n="Credit History">Credit History</div>
-                </a>
-            </li> -->
-            <!-- <li class="menu-item">
-                <a href="{{ url(route('merchant_settings')) }}" class="menu-link">
-                    <i class="menu-icon tf-icons ri-settings-line"></i>
-                    <div data-i18n="Settings">Settings</div>
-                </a>
-            </li> -->
-            {{-- <li class="menu-item">
-                <a href="{{ url(route('merchant_project_wallet')) }}" class="menu-link">
-                    <i class='menu-icon tf-icons ri-bill-line'></i>
-                    <div data-i18n="Project Wallet">Project Wallet</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="{{ url(route('merchant_recent_transactions')) }}" class="menu-link">
-                    <i class='menu-icon tf-icons ri-bill-line'></i>
-                    <div data-i18n="Recent Transactions">Recent Transactions</div>
-                </a>
-            </li> --}}
-    
-            <li class="menu-item">
-                <a href="{{ url(route('merchant_logout')) }}" class="menu-link">
-                    <i class='menu-icon tf-icons ri-user-line'></i>
-                    <div data-i18n="Logout">Logout</div>
-                </a>
-            </li>
-        @endif
+      
 
     </ul>
 </aside>

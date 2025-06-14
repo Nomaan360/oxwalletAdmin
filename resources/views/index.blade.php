@@ -1,6 +1,6 @@
 @extends('include/layout')
 
-@section('title', '9 Pay')
+@section('title', 'OX Wallet')
 
 @section('content')
 <div class="row g-6">

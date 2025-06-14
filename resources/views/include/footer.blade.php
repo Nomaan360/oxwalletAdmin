@@ -6,15 +6,15 @@
             © <script>
             document.write(new Date().getFullYear())
 
-            </script>, 9pay
+            </script>, OxWallet
         </div>
         <div class="d-flex align-items-center gap-5">
             <div class="text-center">
-                <a href="http://www.9pay.co/">9pay Co</a>
+                <a href="#">OxWallet</a>
             </div>
             @if (Session::has('merchantid'))
                 <div class="text-end">
-                    <a href="mailto:support@9pay.co" class="menu-link">
+                    <a href="#" class="menu-link">
                         <div data-i18n="Support">Support</div>
                     </a>
                 </div>

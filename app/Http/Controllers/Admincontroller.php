@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 use function App\Helpers\is_mobile;
 use App\Models\privacy_policy;
+use App\Models\admin;
 
 class Admincontroller extends Controller
 {
@@ -77,5 +78,33 @@ class Admincontroller extends Controller
         Session::forget('role');
         return is_mobile($type, "login");
         // return redirect()->route('login');
+    }
+
+    function add_privacy_policy(Request $req){
+        $type = $req->input('type');
+          $validator = Validator::make($req->all(), [ 
+            'heading' => 'required|unique:privacy_policies', 
+            'text' => 'required|unique:privacy_policies', 
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        $heading = $req->input('heading');
+        $text = $req->input('text');
+
+        $check_exist=privacy_policy::count();
+        if ($check_exist>0) {
+            $lastEntry = privacy_policy::orderBy('id', 'desc')->first();
+            $lastEntry->heading = $heading;
+            $lastEntry->text = $text;
+            $lastEntry->save();
+        }else{   
+            $policy=new privacy_policy;
+            $policy->heading=$heading;
+            $policy->text=$text;
+            $policy->save();
+        }
+            
+         return is_mobile($type, "privacy_policy");
     }
 }

@@ -18,7 +18,7 @@
 
             <div class="card p-md-7 p-1">
                 <div class="app-brand justify-content-center">
-                    <a href="http://www.9pay.co/" class="app-brand-link gap-2">
+                    <a href="#" class="app-brand-link gap-2">
                         <span class="app-brand-logo demo">
                         <span style="color:var(--bs-primary);">
                                 <img src="{{ asset('vendor/img/F.png') }}" width="100">
@@ -36,7 +36,7 @@
                             </div>
                         @endforeach
                     @endif
-                    <h4 class="text-light mb-4 text-center">Welcome to 9 Pay</h4>
+                    <h4 class="text-light mb-4 text-center">Welcome to OX Wallet</h4>
         
                     <form id="formAuthentication" class="mb-5" action="{{url(route('usersignin'))}}" method="POST">
                         @csrf
@@ -62,7 +62,7 @@
         
                     <p class="text-center mb-0">
                         <span clas="text-light">New on our platform?</span>
-                        <a href="https://9pay.co/contact">
+                        <a href="#">
                             <span>Create an account</span>
                         </a>
                     </p>

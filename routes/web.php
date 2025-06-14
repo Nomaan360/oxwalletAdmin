@@ -31,5 +31,9 @@ Route::get('/admin_dashboard', [Admincontroller::class, 'index'])->name('admin_d
 
 Route::post('/usersignup', [Admincontroller::class, 'usersignup'])->name('usersignup');
 Route::post('/usersignin', [Admincontroller::class, 'usersignin'])->name('usersignin');
-
 Route::get('/admin_logout', [Admincontroller::class, 'admin_logout'])->name('admin_logout');
+
+Route::get('/privacy_policy',  function() {
+    return view('add_privacy_policy');
+})->name('privacy_policy')->middleware('admin_session');
+Route::post('/add_privacy_policy', [Admincontroller::class, 'add_privacy_policy'])->name('add_privacy_policy')->middleware('admin_session');
