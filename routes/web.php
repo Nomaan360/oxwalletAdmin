@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admincontroller;
-use App\Http\Controllers\Merchantcontroller;
-use App\Http\Controllers\invoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +35,18 @@ Route::get('/privacy_policy',  function() {
     return view('add_privacy_policy');
 })->name('privacy_policy')->middleware('admin_session');
 Route::post('/add_privacy_policy', [Admincontroller::class, 'add_privacy_policy'])->name('add_privacy_policy')->middleware('admin_session');
+
+Route::get('/terms-of-service',  function() {
+    return view('terms_of_service');
+})->name('terms_of_service')->middleware('admin_session');
+Route::post('/add_terms_of_service', [Admincontroller::class, 'add_terms_of_service'])->name('add_terms_of_service')->middleware('admin_session');
+
+Route::get('/disclosure',  function() {
+    return view('disclosure');
+})->name('disclosure')->middleware('admin_session');
+Route::post('/add_disclosure', [Admincontroller::class, 'add_disclosure'])->name('add_disclosure')->middleware('admin_session');
+
+Route::get('/faq',  function() {
+    return view('faq');
+})->name('faq')->middleware('admin_session');
+Route::post('/add_faq', [Admincontroller::class, 'add_faq'])->name('add_faq')->middleware('admin_session');

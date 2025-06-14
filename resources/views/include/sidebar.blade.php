@@ -40,6 +40,24 @@
                 <div data-i18n="Add Privacy Policy">Add Privacy Policy</div>
             </a>
         </li>
+        <li class="menu-item">
+            <a href="{{ url(route('terms_of_service')) }}" class="menu-link">
+                <i class="menu-icon tf-icons ri-home-smile-line"></i>
+                <div data-i18n="Add Terms of Service">Add Terms of Service</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="{{ url(route('disclosure')) }}" class="menu-link">
+                <i class="menu-icon tf-icons ri-home-smile-line"></i>
+                <div data-i18n="Add Disclosure">Add Disclosure</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="{{ url(route('faq')) }}" class="menu-link">
+                <i class="menu-icon tf-icons ri-home-smile-line"></i>
+                <div data-i18n="Add FAQ">Add FAQ</div>
+            </a>
+        </li>
 
         <li class="menu-item">
             <a href="{{ url(route('admin_logout')) }}" class="menu-link">

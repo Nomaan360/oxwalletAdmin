@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Session;
 use function App\Helpers\is_mobile;
 use App\Models\privacy_policy;
 use App\Models\admin;
+use App\Models\terms_of_service;
+use App\Models\disclosure;
+use App\Models\faq;
 
 class Admincontroller extends Controller
 {
@@ -106,5 +109,86 @@ class Admincontroller extends Controller
         }
             
          return is_mobile($type, "privacy_policy");
+    }
+    function add_terms_of_service(Request $req){
+        $type = $req->input('type');
+          $validator = Validator::make($req->all(), [ 
+            'heading' => 'required', 
+            'text' => 'required', 
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        $heading = $req->input('heading');
+        $text = $req->input('text');
+
+        $check_exist=terms_of_service::count();
+        if ($check_exist>0) {
+            $lastEntry = terms_of_service::orderBy('id', 'desc')->first();
+            $lastEntry->heading = $heading;
+            $lastEntry->text = $text;
+            $lastEntry->save();
+        }else{   
+            $policy=new terms_of_service;
+            $policy->heading=$heading;
+            $policy->text=$text;
+            $policy->save();
+        }
+            
+         return is_mobile($type, "terms_of_service");
+    }
+    function add_disclosure(Request $req){
+        $type = $req->input('type');
+          $validator = Validator::make($req->all(), [ 
+            'heading' => 'required', 
+            'text' => 'required', 
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        $heading = $req->input('heading');
+        $text = $req->input('text');
+
+        $check_exist=disclosure::count();
+        if ($check_exist>0) {
+            $lastEntry = disclosure::orderBy('id', 'desc')->first();
+            $lastEntry->heading = $heading;
+            $lastEntry->text = $text;
+            $lastEntry->save();
+        }else{   
+            $policy=new disclosure;
+            $policy->heading=$heading;
+            $policy->text=$text;
+            $policy->save();
+        }
+            
+         return is_mobile($type, "disclosure");
+    }
+    function add_faq(Request $req){
+        $type = $req->input('type');
+          $validator = Validator::make($req->all(), [ 
+            'heading' => 'required', 
+            'text' => 'required', 
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        $heading = $req->input('heading');
+        $text = $req->input('text');
+
+        $check_exist=faq::count();
+        if ($check_exist>0) {
+            $lastEntry = faq::orderBy('id', 'desc')->first();
+            $lastEntry->heading = $heading;
+            $lastEntry->text = $text;
+            $lastEntry->save();
+        }else{   
+            $policy=new faq;
+            $policy->heading=$heading;
+            $policy->text=$text;
+            $policy->save();
+        }
+            
+         return is_mobile($type, "faq");
     }
 }
