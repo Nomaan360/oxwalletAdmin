@@ -25,7 +25,7 @@
             @endif
           </div>
           <div class="form-floating form-floating-outline mb-6">
-            <input type="text" class="form-control" id="text" name="text" value="{{ old('text') }}"  required />
+            <textarea name="text" id="text" rows="10" cols="80"></textarea>
             <label for="text">Text</label>
             @if ($errors->has('text'))
                 <small class="text-danger">{{ $errors->first('text') }}</small>
@@ -42,8 +42,11 @@
 <!--/ Basic Bootstrap Table -->
 
 
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 
-
+<script>
+    CKEDITOR.replace('text');
+</script>
 @endsection
 @section('customjs')
 <script src="{{ asset('vendor/libs/select2/select2.js') }}"></script>

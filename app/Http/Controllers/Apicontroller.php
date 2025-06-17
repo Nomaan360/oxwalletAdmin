@@ -31,7 +31,7 @@ class Apicontroller extends Controller
         return is_mobile("API",null,$res);
     }
     function faq(){
-        $policy= terms_of_service::get();
+        $policy= faq::get();
         $res['data']=$policy;
 
         return is_mobile("API",null,$res);
