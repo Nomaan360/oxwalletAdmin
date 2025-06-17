@@ -20,7 +20,13 @@ class Admincontroller extends Controller
         $type = $request->input('type');
 
         $privacy_policy= privacy_policy::count();
+        $tos= terms_of_service::count();
+        $disclosure= disclosure::count();
+        $faq= faq::count();
         $res['privacy_policy'] = $privacy_policy;
+        $res['faq'] = $faq;
+        $res['disclosure'] = $disclosure;
+        $res['tos'] = $tos;
 
         return is_mobile($type, "index", $res, 'view');
         // return view('index',compact('merchant','transaction','feessum','amtsum'));
