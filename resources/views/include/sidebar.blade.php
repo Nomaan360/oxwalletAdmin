@@ -7,7 +7,7 @@
         <a class="app-brand-link">
             <span class="app-brand-logo demo">
                 <span style="color:var(--bs-primary);">
-                    <img src="{{ asset('vendor/img/F-light.png') }}" width="88">
+                    <img src="{{ asset('vendor/img/oxw.webp') }}" width="88">
                 </span>
             </span>
             {{-- <span class="app-brand-text demo menu-text fw-semibold ms-2">OX Wallet</span> --}}

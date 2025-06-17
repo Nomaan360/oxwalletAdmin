@@ -21,7 +21,7 @@
                     <a href="#" class="app-brand-link gap-2">
                         <span class="app-brand-logo demo">
                         <span style="color:var(--bs-primary);">
-                                <img src="{{ asset('vendor/img/F.png') }}" width="100">
+                                <img src="{{ asset('vendor/img/oxw.webp') }}" width="100">
                         </span>
                         </span>
                             {{-- <span class="app-brand-text demo text-heading fw-semibold">Coin Txn</span> --}}

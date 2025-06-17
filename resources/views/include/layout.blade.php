@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>OX Wallet</title>
         <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="{{ asset('vendor/img/favicon.png') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('vendor/img/oxw.webp') }}" />
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
